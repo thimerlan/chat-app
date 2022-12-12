@@ -1,0 +1,396 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  //   background-color: #5c63f0aa;
+  background: rgb(174, 238, 222);
+  background: linear-gradient(
+    90deg,
+    rgba(174, 238, 222, 1) 0%,
+    rgba(227, 247, 241, 1) 0%,
+    rgba(246, 246, 195, 0.9304096638655462) 100%
+  );
+  font-family: "Poppins";
+  /* // 61dafbaa */
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  transition: 0.6s all;
+}
+* {
+  scroll-behavior: smooth;
+}
+button,
+input {
+  font-family: "Poppins";
+  outline: none;
+  border: none;
+  border-radius: 1ex;
+}
+.uNull {
+  width: 100%;
+  height: 70vh;
+  text-align: center;
+  font-size: 33px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: aliceblue;
+  background: -webkit-linear-gradient(
+    -120deg,
+    #4285f4,
+    #1fc74c,
+    #fbbc05,
+    #f52714
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.sg {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  bottom: 40%;
+  justify-content: center;
+}
+header {
+  background-image: linear-gradient(
+    90deg,
+    #667eeaa4,
+    #667eea,
+    #6b8dd6,
+    #667eeaa4
+  );
+  box-shadow: 0 4px 15px 0 #744fa8bf;
+
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 50px;
+  .title {
+    h1 {
+      font-size: 30px;
+      color: #fff;
+      font-weight: 777;
+
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+  }
+}
+.logOut {
+  margin-right: 30px;
+  button {
+    cursor: pointer;
+    transition: 0.3s;
+    border: none;
+    outline: none;
+    background-color: #667eeaa4;
+    color: #fff;
+    border-radius: 1ex;
+    padding: 8px 15px;
+    font-weight: 665;
+    &:hover {
+      background-color: #222;
+    }
+  }
+}
+.mC {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+.message {
+  border-radius: 2.3ex 2.3ex 2.3ex 0ex;
+  float: left;
+  margin: 5px;
+  padding: 10px;
+  margin-right: 750px;
+  width: 200px;
+  max-width: 300px;
+  background-image: linear-gradient(
+    to right,
+    #0ba360,
+    #3cba92,
+    #30dd8a,
+    #2bb673
+  );
+  box-shadow: 0 4px 15px 0 #17a86cbf;
+  p {
+    word-wrap: break-word;
+    font-family: "Roboto";
+  }
+  .name {
+    font-weight: 766;
+    color: aliceblue;
+    position: relative;
+    font-family: "Mansalva";
+    top: -6.5px;
+    font-size: 16px;
+  }
+}
+.myMessage {
+  border-radius: 2.3ex 2.3ex 0ex 2.3ex;
+
+  margin: 5px;
+  width: 200px;
+  float: right;
+  padding: 10px;
+  margin-left: 750px;
+  max-width: 300px;
+  background-image: linear-gradient(
+    to right,
+    #6253e1,
+    #a3a1ff,
+    #a3a1ff,
+    #f28445
+  );
+  box-shadow: 0 4px 15px 0 rgba(126, 52, 161, 0.75);
+  p {
+    word-wrap: break-word;
+  }
+  .name {
+    font-weight: 666;
+    color: aliceblue;
+    position: relative;
+    top: -6.5px;
+    font-family: "Mansalva";
+    font-size: 16px;
+  }
+}
+.sendMessage {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 10vh !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  input {
+    margin-right: 5px;
+    background-color: #222;
+    padding: 10px 7px;
+    width: 350px;
+    color: aliceblue;
+    font-family: "Poppins";
+    &::placeholder {
+      font-weight: 555;
+      font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+      color: antiquewhite;
+    }
+  }
+  button {
+    margin-left: 0px;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+    font-weight: 555;
+    padding: 10px 7px;
+    cursor: pointer;
+    background-color: rgba(236, 116, 148, 0.89);
+    color: aliceblue;
+  }
+}
+body {
+  //   background: linear-gradient(130deg, #ff7a18, #af002d 41.07%, #319197 76.05%);
+  background-image: url("https://www.teahub.io/photos/full/362-3620272_dark-blue-texture-background-darkness.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.myMessage,
+.message {
+  .avatar {
+    width: 20%;
+    border-radius: 100%;
+    position: absolute;
+    left: -20px;
+  }
+  position: relative;
+  animation: enterM cubic-bezier(0.19, 0.89, 0.92, 0.7) 0.4s;
+  @keyframes enterM {
+    0% {
+      opacity: 0.4;
+      transform: scale(0.5);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+
+.chat-container {
+  width: 80%;
+  margin: 50px auto;
+  //   max-height: 70vh;
+  //   overflow: auto;
+}
+.Embtn {
+  background-color: transparent !important;
+
+  width: 20px;
+  cursor: pointer;
+  position: fixed;
+  bottom: 0;
+  right: 39%;
+  height: 10vh !important;
+  &* {
+    font-size: 30px;
+  }
+}
+.emojisN {
+  margin-bottom: 370px;
+  border-radius: 2ex;
+  margin-left: -160px;
+
+  opacity: 0;
+  transform: scale(0.9) translateY(-70px);
+
+  pointer-events: none;
+  border-radius: 100%;
+  transition: 0.3s;
+  height: 0;
+}
+.emojis {
+  pointer-events: all;
+  height: 40vh;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.emojis,
+.emojisN {
+  transition: 0.4s;
+
+  margin-bottom: 370px;
+  border-radius: 2ex;
+  margin-left: -160px;
+  .emG {
+    border-radius: 2ex;
+    display: grid;
+    grid-template-columns: repeat(10, 20px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    min-width: 240px;
+    max-height: 300px;
+    gap: 2.4px;
+    &::-webkit-scrollbar {
+      width: 15px;
+      background-color: #6c61ccce;
+      border-radius: 1.4ex;
+      cursor: pointer;
+    }
+    &::-webkit-scrollbar-thumb {
+      width: 10px;
+      border-radius: 1ex;
+      background-color: #518ae5;
+      cursor: pointer;
+    }
+    .em {
+      cursor: pointer;
+    }
+  }
+}
+.footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  height: 15vh !important;
+}
+
+.spinner {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #3cba92;
+  background-image: url("https://www.teahub.io/photos/full/362-3620272_dark-blue-texture-background-darkness.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(1.5);
+}
+// EVENTS
+.events {
+  width: 90px;
+  height: 14vh;
+  border-radius: 1.1ex;
+  display: flex;
+  align-items: center;
+
+  position: absolute;
+  flex-direction: column;
+  top: -40px;
+  right: -70px;
+  background-image: linear-gradient(
+    109.6deg,
+    rgb(224, 209, 92) 31.2%,
+
+    rgb(224, 209, 92) 31.2%,
+
+    rgb(224, 209, 92) 31.2%
+  );
+
+  .smS {
+    cursor: pointer;
+    background-color: transparent;
+    font-size: 17px;
+    padding: 3px;
+    font-weight: 500;
+    color: rgb(55, 70, 66);
+  }
+  transition: 0.4s;
+}
+.eventsN {
+  pointer-events: none;
+  width: 90px;
+  height: 14vh;
+  border-radius: 1.1ex;
+  display: flex;
+  align-items: center;
+
+  position: absolute;
+  flex-direction: column;
+  top: -40px;
+  right: 0px;
+  background-image: linear-gradient(
+    109.6deg,
+    rgb(147, 125, 225) 31.2%,
+
+    rgb(147, 125, 225) 31.2%,
+
+    rgb(147, 125, 225) 31.2%
+  );
+  .smS {
+    cursor: pointer;
+    background-color: transparent;
+    font-size: 17px;
+    padding: 3px;
+    font-weight: 666;
+    color: rgb(174, 238, 222);
+  }
+  transition: 0.4s;
+
+  transform: scale(0.6);
+  opacity: 0;
+}
+//
