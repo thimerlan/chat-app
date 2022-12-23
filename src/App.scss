@@ -3,6 +3,13 @@
   margin: 0;
   box-sizing: border-box;
 }
+input {
+  background-color: transparent;
+  outline: none;
+}
+// body {
+//   //   background: linear-gradient(130deg, #ff7a18, #af002d 41.07%, #319197 76.05%);
+// }
 body {
   //   background-color: #5c63f0aa;
   background: rgb(174, 238, 222);
@@ -13,10 +20,24 @@ body {
     rgba(246, 246, 195, 0.9304096638655462) 100%
   );
   font-family: "Poppins";
+  background-image: url("https://www.teahub.io/photos/full/362-3620272_dark-blue-texture-background-darkness.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
   /* // 61dafbaa */
   scroll-behavior: smooth;
   overflow-x: hidden;
   transition: 0.6s all;
+  &::-webkit-scrollbar {
+    width: 16px;
+    background-color: #527fc7;
+  }
+  &::-webkit-scrollbar-thumb {
+    width: 14px;
+    background-color: #3e5ff5;
+    border-radius: 0.6ex;
+  }
 }
 * {
   scroll-behavior: smooth;
@@ -120,10 +141,7 @@ header {
     #2bb673
   );
   box-shadow: 0 4px 15px 0 #17a86cbf;
-  p {
-    word-wrap: break-word;
-    font-family: "Roboto";
-  }
+
   .name {
     font-weight: 766;
     color: aliceblue;
@@ -144,15 +162,13 @@ header {
   max-width: 300px;
   background-image: linear-gradient(
     to right,
-    #6253e1,
-    #a3a1ff,
-    #a3a1ff,
-    #f28445
+    #eb3941,
+    #f15e64,
+    #e14e53,
+    #e2373f
   );
-  box-shadow: 0 4px 15px 0 rgba(126, 52, 161, 0.75);
-  p {
-    word-wrap: break-word;
-  }
+  box-shadow: 0 5px 15px rgba(242, 97, 103, 0.4);
+
   .name {
     font-weight: 666;
     color: aliceblue;
@@ -177,12 +193,6 @@ header {
     width: 350px;
     color: aliceblue;
     font-family: "Poppins";
-    &::placeholder {
-      font-weight: 555;
-      font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-        "Lucida Sans", Arial, sans-serif;
-      color: antiquewhite;
-    }
   }
   button {
     margin-left: 0px;
@@ -194,14 +204,6 @@ header {
     background-color: rgba(236, 116, 148, 0.89);
     color: aliceblue;
   }
-}
-body {
-  //   background: linear-gradient(130deg, #ff7a18, #af002d 41.07%, #319197 76.05%);
-  background-image: url("https://www.teahub.io/photos/full/362-3620272_dark-blue-texture-background-darkness.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
 }
 
 .myMessage,
@@ -227,6 +229,43 @@ body {
       opacity: 1;
       transform: scale(1);
     }
+  }
+  textarea {
+    resize: none;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    padding: 3px;
+    font-family: "Roboto";
+    word-wrap: break-word;
+    color: #fff;
+    &:disabled {
+      color: #fff;
+    }
+    height: 30px;
+    max-width: 100%;
+    min-width: 185px;
+    max-height: 400px;
+    min-height: 30px;
+    &::-webkit-scrollbar {
+      width: 8px;
+      background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      width: 1px;
+      background-color: #d3ba48;
+      border-radius: 1ex;
+    }
+    &::-webkit-scrollbar-track {
+      border-radius: 1ex;
+
+      margin-left: 3px;
+      background-color: transparent;
+    }
+  }
+  .textarea {
+    resize: auto;
   }
 }
 
@@ -338,25 +377,33 @@ body {
   align-items: center;
 
   position: absolute;
+  z-index: 2;
   flex-direction: column;
   top: -40px;
   right: -70px;
   background-image: linear-gradient(
     109.6deg,
-    rgb(224, 209, 92) 31.2%,
+    rgb(92, 191, 224) 23.2%,
 
-    rgb(224, 209, 92) 31.2%,
-
-    rgb(224, 209, 92) 31.2%
+    #667eea 31.2%
   );
 
   .smS {
     cursor: pointer;
     background-color: transparent;
-    font-size: 17px;
-    padding: 3px;
+    font-size: 20px;
+    padding: 4px;
+    margin-right: 2px;
     font-weight: 500;
-    color: rgb(55, 70, 66);
+    font-family: "Mansalva";
+    display: flex;
+    align-items: center;
+    color: rgb(59, 36, 36);
+    span {
+      font-size: 18px;
+      margin-left: 5px;
+      color: azure;
+    }
   }
   transition: 0.4s;
 }
@@ -364,28 +411,31 @@ body {
   pointer-events: none;
   width: 90px;
   height: 14vh;
-  border-radius: 1.1ex;
+  border-radius: 0.1ex;
   display: flex;
   align-items: center;
-
   position: absolute;
   flex-direction: column;
   top: -40px;
   right: 0px;
   background-image: linear-gradient(
     109.6deg,
-    rgb(147, 125, 225) 31.2%,
+    rgba(72, 66, 93, 0.548) 31.2%,
 
-    rgb(147, 125, 225) 31.2%,
+    rgba(72, 66, 93, 0.509) 31.2%,
 
-    rgb(147, 125, 225) 31.2%
+    rgba(72, 66, 93, 0.419) 31.2%
   );
+
   .smS {
     cursor: pointer;
     background-color: transparent;
-    font-size: 17px;
+    font-size: 12px;
     padding: 3px;
     font-weight: 666;
+    display: flex;
+    align-items: center;
+
     color: rgb(174, 238, 222);
   }
   transition: 0.4s;
@@ -393,4 +443,119 @@ body {
   transform: scale(0.6);
   opacity: 0;
 }
+.changed {
+  transform: 0.3s;
+  background-color: #c4ac4c !important;
+  transform: scale(1.07);
+}
 //
+.reply {
+  position: relative;
+  button {
+    cursor: pointer;
+    position: absolute;
+    background: transparent;
+    left: -32px;
+    top: 20px;
+  }
+}
+.rM {
+  display: flex;
+  position: relative;
+  .rMsgM {
+    position: absolute;
+    width: 250px;
+    bottom: 5px;
+    left: 191px;
+    background: rgba(94, 95, 74, 0.388);
+    max-height: 20vh;
+    overflow-y: auto;
+    border-radius: 1ex;
+    &::-webkit-scrollbar {
+      width: 10px;
+      background-color: aliceblue;
+      border-radius: 0.5ex;
+    }
+    &::-webkit-scrollbar-thumb {
+      width: 8px;
+      background-color: #485563;
+    }
+    h2 {
+      font-size: 15px;
+      color: rgb(245, 227, 227);
+      letter-spacing: 0.1em;
+      padding: 4px;
+    }
+    p {
+      padding: 4px;
+      letter-spacing: 0.09em;
+      font-weight: 555;
+      color: #fff;
+      max-width: 250px;
+      word-wrap: break-word;
+    }
+    span {
+      cursor: pointer;
+      position: absolute;
+
+      right: 158px;
+      bottom: -5px;
+      font-size: 22px;
+      color: #1fc74c;
+    }
+  }
+  .rMsgS {
+    position: absolute;
+    width: 410px;
+    padding: 7px;
+    border-radius: 2ex;
+    background-image: linear-gradient(
+      to right,
+      #29323c,
+      #485563,
+      #485563,
+      #29323c
+    );
+    max-height: 20vh;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+      width: 10px;
+      background-color: aliceblue;
+      border-radius: 0.5ex;
+    }
+    &::-webkit-scrollbar-thumb {
+      width: 8px;
+      background-color: #485563;
+    }
+    box-shadow: 0 4px 15px 0 rgba(51, 69, 92, 0.75);
+    bottom: 55px;
+    left: 16px;
+    h2 {
+      font-size: 15px;
+      color: rgb(255, 255, 255);
+      letter-spacing: 0.1em;
+    }
+    p {
+      letter-spacing: 0.09em;
+      font-weight: 555;
+      color: rgb(220, 229, 183);
+      max-width: 250px;
+      word-wrap: break-word;
+    }
+    span {
+      cursor: pointer;
+      display: flex;
+      justify-content: right;
+
+      right: 8px;
+      bottom: -1px;
+      font-size: 22px;
+      color: #1fc74c;
+    }
+  }
+}
+
+.time {
+  text-align: right;
+  height: 1.5vh;
+}

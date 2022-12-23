@@ -14,7 +14,7 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setSpin(false);
-    }, 2000);
+    }, 200);
   }, []);
 
   return (
@@ -32,7 +32,7 @@ function App() {
       ) : (
         ""
       )}
-      {console.log(user)}
+
       {user ? (
         <Chat />
       ) : (

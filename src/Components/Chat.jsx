@@ -5,8 +5,11 @@ import SyncLoader from "react-spinners/SyncLoader";
 import { db } from "../firebase";
 import Message from "./Message";
 import SendMessage from "./SendMessage";
+
 const Chat = () => {
   const [messages, setMessages] = useState([]);
+  const [replyN, setReplyN] = useState("");
+  const [replyT, setReplyT] = useState("");
   const [spin, setSpin] = useState(false);
   const scroll = useRef();
 
@@ -28,7 +31,17 @@ const Chat = () => {
       <main>
         <div className="chat-container">
           {messages.length ? (
-            <Message messages={messages} />
+            messages.map((ms) => (
+              <Message
+                key={ms.id}
+                message={ms}
+                replyN={replyN}
+                replyT={replyT}
+                setReplyN={setReplyN}
+                setReplyT={setReplyT}
+                messages={messages}
+              />
+            ))
           ) : (
             <h2 className="uNull">
               {!spin && <SyncLoader color="#1dcceb" size={30} />}
@@ -37,7 +50,14 @@ const Chat = () => {
           )}
         </div>
       </main>
-      <SendMessage scroll={scroll} />
+      <SendMessage
+        replyN={replyN}
+        replyT={replyT}
+        setReplyN={setReplyN}
+        setReplyT={setReplyT}
+        messages={messages}
+        scroll={scroll}
+      />
       <span ref={scroll}></span>
     </>
   );

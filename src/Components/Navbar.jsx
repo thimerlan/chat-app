@@ -6,7 +6,7 @@ import LogOut from "./LogOut";
 
 const Navbar = () => {
   const [user] = useAuthState(auth);
-  console.log(user);
+
   return (
     <header>
       <div className="title">
